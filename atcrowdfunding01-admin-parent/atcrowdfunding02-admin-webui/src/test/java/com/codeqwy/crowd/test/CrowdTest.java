@@ -1,7 +1,9 @@
 package com.codeqwy.crowd.test;
 
 import com.codeqwy.crowd.entity.Admin;
+import com.codeqwy.crowd.entity.Role;
 import com.codeqwy.crowd.mapper.AdminMapper;
+import com.codeqwy.crowd.mapper.RoleMapper;
 import com.codeqwy.crowd.service.api.AdminService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,10 +36,22 @@ public class CrowdTest {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private RoleMapper roleMapper;
+
+    @Test
+    public void testRole() {
+        for (int i = 0; i < 234; ++i) {
+            roleMapper.insert(new Role(null, "role" + i));
+        }
+    }
+
     @Test
     public void testTx() {
-        Admin admin = new Admin(null, "jerry", "123123", "杰瑞", "jerry@qq.com", null);
-        adminService.saveAdmin(admin);
+        for(int i = 1; i <= 222; ++i) {
+            Admin admin = new Admin(null, "jerry" + i, "123123", "杰瑞" + i, "jerry@qq.com", null);
+            adminService.saveAdmin(admin);
+        }
     }
 
     @Test

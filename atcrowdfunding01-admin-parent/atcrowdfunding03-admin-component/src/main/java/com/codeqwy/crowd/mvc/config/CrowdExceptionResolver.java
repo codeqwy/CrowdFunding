@@ -1,6 +1,8 @@
 package com.codeqwy.crowd.mvc.config;
 
 import com.codeqwy.crowd.constant.CrowdConstant;
+import com.codeqwy.crowd.exception.LoginAcctAlreadyInUseException;
+import com.codeqwy.crowd.exception.LoginFailedException;
 import com.codeqwy.crowd.util.CrowdUtil;
 import com.codeqwy.crowd.util.ResultEntity;
 import com.google.gson.Gson;
@@ -20,6 +22,24 @@ import java.io.IOException;
 // @ControllerAdvice表示当前类是一个基于注解的异常处理器类
 @ControllerAdvice
 public class CrowdExceptionResolver {
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView resolveException(Exception exception, HttpServletRequest request, HttpServletResponse response
+    ) throws IOException {
+        String viewName = "system-error";
+        return commonResolve(viewName, exception, request, response);
+    }
+
+    @ExceptionHandler(value = LoginAcctAlreadyInUseException.class)
+    public ModelAndView resolveLoginAcctAlreadyInUseException(LoginAcctAlreadyInUseException exception, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String viewName = "admin-add";
+        return commonResolve(viewName, exception, request, response);
+    }
+
+    @ExceptionHandler(value = LoginFailedException.class)
+    public ModelAndView resolveLoginFailedException(LoginFailedException exception, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String viewName = "admin-login";
+        return commonResolve(viewName, exception, request, response);
+    }
 
     @ExceptionHandler(value = ArithmeticException.class)
     public ModelAndView resolveMathException(ArithmeticException exception, HttpServletRequest request, HttpServletResponse response) throws IOException {

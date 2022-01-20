@@ -2,8 +2,9 @@ package com.codeqwy.crowd.mapper;
 
 import com.codeqwy.crowd.entity.Menu;
 import com.codeqwy.crowd.entity.MenuExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface MenuMapper {
     long countByExample(MenuExample example);

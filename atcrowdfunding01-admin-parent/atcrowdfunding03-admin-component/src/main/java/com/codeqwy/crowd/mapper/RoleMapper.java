@@ -2,8 +2,9 @@ package com.codeqwy.crowd.mapper;
 
 import com.codeqwy.crowd.entity.Role;
 import com.codeqwy.crowd.entity.RoleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface RoleMapper {
     long countByExample(RoleExample example);
@@ -27,4 +28,10 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    List<Role> selectRoleByKeyword(String keyword);
+
+    List<Role> selectAssignedRole(Integer adminId);
+
+    List<Role> selectUnAssignedRole(Integer adminId);
 }

@@ -1,6 +1,26 @@
-package com.codeqwy.crowd.exception;/**
+package com.codeqwy.crowd.exception;
+
+/**
  * @Author CodeQwy
  * @Date 2022/1/9 15:19
- * @Description LoginFailedException
- */public class LoginFailedException {
+ * @Description LoginFailedException 登录失败后抛出的异常
+ */
+public class LoginFailedException extends RuntimeException{
+    private static final long serialVersionUID = 1L;
+
+    public LoginFailedException(String message) {
+        super(message);
+    }
+
+    public LoginFailedException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public LoginFailedException(Throwable cause) {
+        super(cause);
+    }
+
+    public LoginFailedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

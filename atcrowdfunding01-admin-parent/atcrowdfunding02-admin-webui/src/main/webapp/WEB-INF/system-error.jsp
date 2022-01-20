@@ -9,9 +9,9 @@
     <meta name="keys" content="">
     <meta name="author" content="">
     <base href="http://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/"/>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/login.css">
     <style>
 
     </style>
@@ -32,8 +32,8 @@
     <h3 style="text-align: center">${requestScope.exception.message}</h3>
     <button style="width: 150px;margin: 50px auto 0 auto" class="btn btn-lg btn-success btn-block">点我返回上一步</button>
 </div>
-<script type="text/javascript" src="jquery/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
   $(function () {
     $("button").click(function () {

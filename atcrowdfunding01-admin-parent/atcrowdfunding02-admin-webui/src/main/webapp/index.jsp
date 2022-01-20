@@ -7,8 +7,8 @@
     <title>首页</title>
 
     <base href="http://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
-    <script type="text/javascript" src="jquery/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="layer/layer.js"></script>
+    <script type="text/javascript" src="static/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="static/layer/layer.js"></script>
     <script>
       $(function() {
 
@@ -54,6 +54,7 @@
     </script>
 </head>
 <body>
+    <jsp:forward page="/admin/to/login/page.html"/>
     <a href="test/ssm.html">测试 SSM 整合环境</a>
 
     <br/>

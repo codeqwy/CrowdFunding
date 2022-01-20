@@ -1,3 +1,9 @@
+# 忽略所有 target 目录
+target/
+
+#忽略所有 .idea 目录
+.idea/
+
 # Compiled class file
 *.class
 
